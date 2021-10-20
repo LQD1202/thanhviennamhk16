@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Chúc Mừng Ngày 20/10</title>
+</head>
+<body>
+	<script type="text/javascript" src="lib.js"></script>
+	<script type="text/javascript">
+		var scrWidth = window.innerWidth;
+		var scrHeight = window.innerHeight;
+		var game = new Phaser.Game(scrWidth, scrHeight, Phaser.CANVAS, '', 
+			{preload: preload, create: create, update: update});
+		var message;
+		var roses;
+		var message1;
+		var nhi1;
+		var message2;
+		var thu;
+		var message3;
+		var mi;
+		var message4;
+		var ngan;
+		var message5;
+		var giang;
+		var message6;
+		var trang;
+		var message7;
+		var tram;
+		var message8;
+		var quy;
+		var message9;
+		var duong;
+		var message10;
+		var phuong;
+		var message11;
+		var phuong1;
+		var message12;
+		var thao;
+		var message13;
+		var ha;
+		var message14;
+		var trinh;
+		var message15;
+		var message16;
+		var message17;
+		var message18;
+
+		function preload() {
+			game.load.spritesheet('firework1', 'firework1.png', 128, 128);
+			game.load.spritesheet('firework2', 'firework2.png', 128, 128);
+			game.load.spritesheet('firework3', 'firework3.png', 128, 128);
+			game.load.spritesheet('1', '1.jpg', 128, 128);
+			game.load.image('roses', 'roses.jpg');
+			game.load.image('message', 'message.png');
+			game.load.image('message1', 'message1.jpg');
+			game.load.image('nhi', 'nhi.jpg')
+			game.load.image('message2', 'message2.jpg');
+			game.load.image('thu', 'thu.jpg')
+			game.load.image('message3', 'message3.jpg');
+			game.load.image('mi', 'mi.jpg')
+			game.load.image('message4', 'message4.jpg');
+			game.load.image('ngan', 'ngan.jpg')
+			game.load.image('message5', 'message5.jpg');
+			game.load.image('giang', 'giang.jpg')
+			game.load.image('message6', 'message6.jpg');
+			game.load.image('trang', 'trang.jpg')
+			game.load.image('message7', 'message7.jpg');
+			game.load.image('tram', 'tram.jpg')
+			game.load.image('message8', 'message8.jpg');
+			game.load.image('quy', 'quy.jpg')
+			game.load.image('message9', 'message9.jpg');
+			game.load.image('duong', 'duong.jpg')
+			game.load.image('message10', 'message10.jpg');
+			game.load.image('phuong', 'phuong.jpg')
+			game.load.image('message11', 'message11.jpg');
+			game.load.image('phuong1', 'phuong1.jpg')
+			game.load.image('message12', 'message12.jpg');
+			game.load.image('thao', 'thao.jpg')
+			game.load.image('message13', 'message13.jpg');
+			game.load.image('ha', 'ha.jpg')
+			game.load.image('message14', 'message14.jpg');
+			game.load.image('trinh', 'trinh.jpg')
+			game.load.image('message15', 'message15.jpg');
+			game.load.image('message16', 'message16.jpg');
+			game.load.image('message17', 'message17.jpg');
+			game.load.image('message18', 'message18.jpg');
+		}
+
+		function create() {
+			//loi chung tong the
+			message = game.add.image(game.width/2, game.height/2, 'message');
+			message.anchor.setTo(0.5);
+			var messageScale = (scrWidth > scrHeight) ? game.height/(1.25*message.width) :
+			game.width/(1.25*message.width);
+			message.scale.setTo(messageScale);
+			
+			 game.time.events.repeat(100, 2000, function() {
+				for(var i = 0; i < 1; i++) {
+					var f1 = game.add.sprite(game.rnd.integerInRange(10, game.width - 10), 
+					 	game.rnd.integerInRange(10, game.height - 10), 'firework1');
+					f1.animations.add('fire1');
+					f1.animations.play('fire1', 20, false, true);
+
+					var f2 = game.add.sprite(game.rnd.integerInRange(10, game.width - 10), 
+						game.rnd.integerInRange(10, game.height - 10), 'firework2');
+					f2.animations.add('fire2');
+					f2.animations.play('fire2', 20, false, true);
+
+					var f3 = game.add.sprite(game.rnd.integerInRange(10, game.width - 10), 
+						game.rnd.integerInRange(10, game.height - 10), 'firework3');
+					f3.animations.add('fire3');
+					f3.animations.play('fire3', 20, false, true);
+				}
+			});
+			//hinh chung
+			game.time.events.add(4200, function() {
+				var messageTwn = game.add.tween(message.scale).to({x: 0, y: 0}, 500, 'Linear', true);
+				messageTwn.onComplete.add(function() {
+					message.kill();
+					roses = game.add.image(game.width/2, game.height/2, 'roses');
+					roses.anchor.setTo(0.5);
+					var rosesScale = (scrWidth > scrHeight) ? game.height/(1.15*roses.width) :
+						game.width/(1.15*roses.width);
+					roses.scale.setTo(0);
+
+					var rTwn = game.add.tween(roses.scale).to({x: rosesScale, y: rosesScale}, 600, 'Linear', true, 200);
+				});
+			});
+			//hinh nhi
+			game.time.events.add(8400, function() {
+				var rosesTwn = game.add.tween(roses.scale).to({x: 0, y: 0}, 500, 'Linear', true);
+				rosesTwn.onComplete.add(function() {
+					roses.kill();
+					nhi1 = game.add.image(game.width/2, game.height/2, 'nhi');
+					nhi1.anchor.setTo(0.5);
+					var nhi1Scale = (scrWidth > scrHeight) ? game.height/(1.15*nhi1.width) :
+						game.width/(1.15*nhi1.width);
+					nhi1.scale.setTo(0);
+
+					var n1Twn = game.add.tween(nhi1.scale).to({x: nhi1Scale, y: nhi1Scale}, 600, 'Linear', true, 200);
+				});
+			});
+			//chuc nhi
+			game.time.events.add(12600, function() {
+				var nhi1Twn = game.add.tween(nhi1.scale).to({x: 0, y: 0}, 500, 'Linear', true);
+				nhi1Twn.onComplete.add(function() {
+					nhi1.kill();
+					message1 = game.add.image(game.width/2, game.height/2, 'message1');
+					message1.anchor.setTo(0.5);
+					var message1Scale = (scrWidth > scrHeight) ? game.height/(1.15*message1.width) :
+						game.width/(1.15*message1.width);
+					message1.scale.setTo(0);
+
+					var n1Twn = game.add.tween(message1.scale).to({x: message1Scale, y: message1Scale}, 600, 'Linear', true, 200);
+				});
+			});
+			//hinh thu
+			game.time.events.add(16800, function() {
+				var message1Twn = game.add.tween(message1.scale).to({x: 0, y: 0}, 500, 'Linear', true);
+				message1Twn.onComplete.add(function() {
+					message1.kill();
+					thu = game.add.image(game.width/2, game.height/2, 'thu');
+					thu.anchor.setTo(0.5);
+					var thuScale = (scrWidth > scrHeight) ? game.height/(1.15*thu.width) :
+						game.width/(1.15*thu.width);
+					thu.scale.setTo(0);
+
+					var n1Twn = game.add.tween(thu.scale).to({x: thuScale, y: thuScale}, 600, 'Linear', true, 200);
+				});
+			});
+			//chuc thu
+			game.time.events.add(21000, function() {
+				var thuTwn = game.add.tween(thu.scale).to({x: 0, y: 0}, 500, 'Linear', true);
+				thuTwn.onComplete.add(function() {
+					thu.kill();
+					message2 = game.add.image(game.width/2, game.height/2, 'message2');
+					message2.anchor.setTo(0.5);
+					var message2Scale = (scrWidth > scrHeight) ? game.height/(1.15*message2.width) :
+						game.width/(1.15*message2.width);
+					message2.scale.setTo(0);
+
+					var n1Twn = game.add.tween(message2.scale).to({x: message2Scale, y: message2Scale}, 600, 'Linear', true, 200);
+				});
+			});
+			//hinh mi
+			game.time.events.add(25200, function() {
+				var message2Twn = game.add.tween(message2.scale).to({x: 0, y: 0}, 500, 'Linear', true);
+				message2Twn.onComplete.add(function() {
+					message2.kill();
+					mi = game.add.image(game.width/2, game.height/2, 'mi');
+					mi.anchor.setTo(0.5);
+					var miScale = (scrWidth > scrHeight) ? game.height/(1.15*mi.width) :
+						game.width/(1.15*mi.width);
+					mi.scale.setTo(0);
+
+					var n1Twn = game.add.tween(mi.scale).to({x: miScale, y: miScale}, 600, 'Linear', true, 200);
+				});
+			});
+			//chuc mi
+			game.time.events.add(29400, function() {
+				var miTwn = game.add.tween(mi.scale).to({x: 0, y: 0}, 500, 'Linear', true);
+				miTwn.onComplete.add(function() {
+					mi.kill();
+					message3 = game.add.image(game.width/2, game.height/2, 'message3');
+					message3.anchor.setTo(0.5);
+					var message3Scale = (scrWidth > scrHeight) ? game.height/(1.15*message3.width) :
+						game.width/(1.15*message3.width);
+					message3.scale.setTo(0);
+
+					var n1Twn = game.add.tween(message3.scale).to({x: message3Scale, y: message3Scale}, 600, 'Linear', true, 200);
+				});
+			});
+			//hinh ngan
+			game.time.events.add(33600, function() {
+				var message3Twn = game.add.tween(message3.scale).to({x: 0, y: 0}, 500, 'Linear', true);
+				message3Twn.onComplete.add(function() {
+					message3.kill();
+					ngan = game.add.image(game.width/2, game.height/2, 'ngan');
+					ngan.anchor.setTo(0.5);
+					var nganScale = (scrWidth > scrHeight) ? game.height/(1.15*ngan.width) :
+						game.width/(1.15*ngan.width);
+					ngan.scale.setTo(0);
+
+					var n1Twn = game.add.tween(ngan.scale).to({x: nganScale, y: nganScale}, 600, 'Linear', true, 200);
+				});
+			});
+			//chuc ngan
+			game.time.events.add(37800, function() {
+				var nganTwn = game.add.tween(ngan.scale).to({x: 0, y: 0}, 500, 'Linear', true);
+				nganTwn.onComplete.add(function() {
+					ngan.kill();
+					message4 = game.add.image(game.width/2, game.height/2, 'message4');
+					message4.anchor.setTo(0.5);
+					var message4Scale = (scrWidth > scrHeight) ? game.height/(1.15*message4.width) :
+						game.width/(1.15*message4.width);
+					message4.scale.setTo(0);
+
+					var n1Twn = game.add.tween(message4.scale).to({x: message4Scale, y: message4Scale}, 600, 'Linear', true, 200);
+				});
+			});
+			//hinh giang
+			game.time.events.add(42000, function() {
+				var message4Twn = game.add.tween(message4.scale).to({x: 0, y: 0}, 500, 'Linear', true);
+				message4Twn.onComplete.add(function() {
+					message4.kill();
+					giang = game.add.image(game.width/2, game.height/2, 'giang');
+					giang.anchor.setTo(0.5);
+					var giangScale = (scrWidth > scrHeight) ? game.height/(1.15*giang.width) :
+						game.width/(1.15*giang.width);
+					giang.scale.setTo(0);
+
+					var n1Twn = game.add.tween(giang.scale).to({x: giangScale, y: giangScale}, 600, 'Linear', true, 200);
+				});
+			});
+			//chuc giang
+			game.time.events.add(46200, function() {
+				var giangTwn = game.add.tween(giang.scale).to({x: 0, y: 0}, 500, 'Linear', true);
+				giangTwn.onComplete.add(function() {
+					giang.kill();
+					message5 = game.add.image(game.width/2, game.height/2, 'message5');
+					message5.anchor.setTo(0.5);
+					var message5Scale = (scrWidth > scrHeight) ? game.height/(1.15*message5.width) :
+						game.width/(1.15*message5.width);
+					message5.scale.setTo(0);
+
+					var n1Twn = game.add.tween(message5.scale).to({x: message5Scale, y: message5Scale}, 600, 'Linear', true, 200);
+				});
+			});
+			//hinh trang
+			game.time.events.add(50400, function() {
+				var message5Twn = game.add.tween(message5.scale).to({x: 0, y: 0}, 500, 'Linear', true);
+				message5Twn.onComplete.add(function() {
+					message5.kill();
+					trang = game.add.image(game.width/2, game.height/2, 'trang');
+					trang.anchor.setTo(0.5);
+					var trangScale = (scrWidth > scrHeight) ? game.height/(1.15*trang.width) :
+						game.width/(1.15*trang.width);
+					trang.scale.setTo(0);
+
+					var n1Twn = game.add.tween(trang.scale).to({x: trangScale, y: trangScale}, 600, 'Linear', true, 200);
+				});
+			});
+			// chuc trang
+			game.time.events.add(54600, function() {
+				var trangTwn = game.add.tween(trang.scale).to({x: 0, y: 0}, 500, 'Linear', true);
+				trangTwn.onComplete.add(function() {
+					trang.kill();
+					message6 = game.add.image(game.width/2, game.height/2, 'message6');
+					message6.anchor.setTo(0.5);
+					var message6Scale = (scrWidth > scrHeight) ? game.height/(1.15*message6.width) :
+						game.width/(1.15*message6.width);
+					message6.scale.setTo(0);
+
+					var n1Twn = game.add.tween(message6.scale).to({x: message6Scale, y: message6Scale}, 600, 'Linear', true, 200);
+				});
+			});
+			//hinh tram
+			game.time.events.add(58800, function() {
+				var message6Twn = game.add.tween(message6.scale).to({x: 0, y: 0}, 500, 'Linear', true);
+				message6Twn.onComplete.add(function() {
+					message6.kill();
+					tram = game.add.image(game.width/2, game.height/2, 'tram');
+					tram.anchor.setTo(0.5);
+					var tramScale = (scrWidth > scrHeight) ? game.height/(1.15*tram.width) :
+						game.width/(1.15*tram.width);
+					tram.scale.setTo(0);
+
+					var n1Twn = game.add.tween(tram.scale).to({x: tramScale, y: tramScale}, 600, 'Linear', true, 200);
+				});
+			});
+			//chuc tram
+			game.time.events.add(63000, function() {
+				var tramTwn = game.add.tween(tram.scale).to({x: 0, y: 0}, 500, 'Linear', true);
+				tramTwn.onComplete.add(function() {
+					tram.kill();
+					message7 = game.add.image(game.width/2, game.height/2, 'message7');
+					message7.anchor.setTo(0.5);
+					var message7Scale = (scrWidth > scrHeight) ? game.height/(1.15*message7.width) :
+						game.width/(1.15*message7.width);
+					message7.scale.setTo(0);
+
+					var n1Twn = game.add.tween(message7.scale).to({x: message7Scale, y: message7Scale}, 600, 'Linear', true, 200);
+				});
+			});
+			//hinh quy
+			game.time.events.add(67200, function() {
+				var message7Twn = game.add.tween(message7.scale).to({x: 0, y: 0}, 500, 'Linear', true);
+				message7Twn.onComplete.add(function() {
+					message7.kill();
+					quy = game.add.image(game.width/2, game.height/2, 'quy');
+					quy.anchor.setTo(0.5);
+					var quyScale = (scrWidth > scrHeight) ? game.height/(1.15*quy.width) :
+						game.width/(1.15*quy.width);
+					quy.scale.setTo(0);
+
+					var n1Twn = game.add.tween(quy.scale).to({x: quyScale, y: quyScale}, 600, 'Linear', true, 200);
+				});
+			});
+			//chuc quy
+			game.time.events.add(71400, function() {
+				var quyTwn = game.add.tween(quy.scale).to({x: 0, y: 0}, 500, 'Linear', true);
+				quyTwn.onComplete.add(function() {
+					quy.kill();
+					message8 = game.add.image(game.width/2, game.height/2, 'message8');
+					message8.anchor.setTo(0.5);
+					var message8Scale = (scrWidth > scrHeight) ? game.height/(1.15*message8.width) :
+						game.width/(1.15*message8.width);
+					message8.scale.setTo(0);
+
+					var n1Twn = game.add.tween(message8.scale).to({x: message8Scale, y: message8Scale}, 600, 'Linear', true, 200);
+				});
+			});
+			//hinh duong
+			game.time.events.add(75600, function() {
+				var message8Twn = game.add.tween(message8.scale).to({x: 0, y: 0}, 500, 'Linear', true);
+				message8Twn.onComplete.add(function() {
+					message8.kill();
+					duong = game.add.image(game.width/2, game.height/2, 'duong');
+					duong.anchor.setTo(0.5);
+					var duongScale = (scrWidth > scrHeight) ? game.height/(1.15*duong.width) :
+						game.width/(1.15*duong.width);
+					duong.scale.setTo(0);
+
+					var n1Twn = game.add.tween(duong.scale).to({x: duongScale, y: duongScale}, 600, 'Linear', true, 200);
+				});
+			});
+			//chuc duong
+			game.time.events.add(79800, function() {
+				var duongTwn = game.add.tween(duong.scale).to({x: 0, y: 0}, 500, 'Linear', true);
+				duongTwn.onComplete.add(function() {
+					duong.kill();
+					message9 = game.add.image(game.width/2, game.height/2, 'message9');
+					message9.anchor.setTo(0.5);
+					var message9Scale = (scrWidth > scrHeight) ? game.height/(1.15*message9.width) :
+						game.width/(1.15*message9.width);
+					message9.scale.setTo(0);
+
+					var n1Twn = game.add.tween(message9.scale).to({x: message9Scale, y: message9Scale}, 600, 'Linear', true, 200);
+				});
+			});
+			//hinh phuong
+			game.time.events.add(84000, function() {
+				var message9Twn = game.add.tween(message9.scale).to({x: 0, y: 0}, 500, 'Linear', true);
+				message9Twn.onComplete.add(function() {
+					message9.kill();
+					phuong = game.add.image(game.width/2, game.height/2, 'phuong');
+					phuong.anchor.setTo(0.5);
+					var phuongScale = (scrWidth > scrHeight) ? game.height/(1.15*phuong.width) :
+						game.width/(1.15*phuong.width);
+					phuong.scale.setTo(0);
+
+					var n1Twn = game.add.tween(phuong.scale).to({x: phuongScale, y: phuongScale}, 600, 'Linear', true, 200);
+				});
+			});
+			//chuc phuong
+			game.time.events.add(88200, function() {
+				var phuongTwn = game.add.tween(phuong.scale).to({x: 0, y: 0}, 500, 'Linear', true);
+				phuongTwn.onComplete.add(function() {
+					phuong.kill();
+					message10 = game.add.image(game.width/2, game.height/2, 'message10');
+					message10.anchor.setTo(0.5);
+					var message10Scale = (scrWidth > scrHeight) ? game.height/(1.15*message10.width) :
+						game.width/(1.15*message10.width);
+					message10.scale.setTo(0);
+
+					var n1Twn = game.add.tween(message10.scale).to({x: message10Scale, y: message10Scale}, 600, 'Linear', true, 200);
+				});
+			});
+			//hinh phượng
+			game.time.events.add(92400, function() {
+				var message10Twn = game.add.tween(message10.scale).to({x: 0, y: 0}, 500, 'Linear', true);
+				message10Twn.onComplete.add(function() {
+					message10.kill();
+					phuong1 = game.add.image(game.width/2, game.height/2, 'phuong1');
+					phuong1.anchor.setTo(0.5);
+					var phuong1Scale = (scrWidth > scrHeight) ? game.height/(1.15*phuong1.width) :
+						game.width/(1.15*phuong1.width);
+					phuong1.scale.setTo(0);
+
+					var n1Twn = game.add.tween(phuong1.scale).to({x: phuong1Scale, y: phuong1Scale}, 600, 'Linear', true, 200);
+				});
+			});
+			//chuc phượng
+			game.time.events.add(96600, function() {
+				var phuong1Twn = game.add.tween(phuong1.scale).to({x: 0, y: 0}, 500, 'Linear', true);
+				phuong1Twn.onComplete.add(function() {
+					phuong1.kill();
+					message11 = game.add.image(game.width/2, game.height/2, 'message11');
+					message11.anchor.setTo(0.5);
+					var message11Scale = (scrWidth > scrHeight) ? game.height/(1.15*message11.width) :
+						game.width/(1.15*message11.width);
+					message11.scale.setTo(0);
+
+					var n1Twn = game.add.tween(message11.scale).to({x: message11Scale, y: message11Scale}, 600, 'Linear', true, 200);
+				});
+			});
+			//hinh thao
+			game.time.events.add(100800, function() {
+				var message11Twn = game.add.tween(message11.scale).to({x: 0, y: 0}, 500, 'Linear', true);
+				message11Twn.onComplete.add(function() {
+					message11.kill();
+					thao = game.add.image(game.width/2, game.height/2, 'thao');
+					thao.anchor.setTo(0.5);
+					var thaoScale = (scrWidth > scrHeight) ? game.height/(1.15*thao.width) :
+						game.width/(1.15*thao.width);
+					thao.scale.setTo(0);
+
+					var n1Twn = game.add.tween(thao.scale).to({x: thaoScale, y: thaoScale}, 600, 'Linear', true, 200);
+				});
+			});
+			//chuc thao
+			game.time.events.add(105000, function() {
+				var thaoTwn = game.add.tween(thao.scale).to({x: 0, y: 0}, 500, 'Linear', true);
+				thaoTwn.onComplete.add(function() {
+					thao.kill();
+					message12 = game.add.image(game.width/2, game.height/2, 'message12');
+					message12.anchor.setTo(0.5);
+					var message12Scale = (scrWidth > scrHeight) ? game.height/(1.15*message12.width) :
+						game.width/(1.15*message12.width);
+					message12.scale.setTo(0);
+
+					var n1Twn = game.add.tween(message12.scale).to({x: message12Scale, y: message12Scale}, 600, 'Linear', true, 200);
+				});
+			});
+			//hinh ha
+			game.time.events.add(109200, function() {
+				var message12Twn = game.add.tween(message12.scale).to({x: 0, y: 0}, 500, 'Linear', true);
+				message12Twn.onComplete.add(function() {
+					message12.kill();
+					ha = game.add.image(game.width/2, game.height/2, 'ha');
+					ha.anchor.setTo(0.5);
+					var haScale = (scrWidth > scrHeight) ? game.height/(1.15*ha.width) :
+						game.width/(1.15*ha.width);
+					ha.scale.setTo(0);
+
+					var n1Twn = game.add.tween(ha.scale).to({x: haScale, y: haScale}, 600, 'Linear', true, 200);
+				});
+			});
+			// chuc ha
+			game.time.events.add(113400, function() {
+				var haTwn = game.add.tween(ha.scale).to({x: 0, y: 0}, 500, 'Linear', true);
+				haTwn.onComplete.add(function() {
+					ha.kill();
+					message13 = game.add.image(game.width/2, game.height/2, 'message13');
+					message13.anchor.setTo(0.5);
+					var message13Scale = (scrWidth > scrHeight) ? game.height/(1.15*message13.width) :
+						game.width/(1.15*message13.width);
+					message13.scale.setTo(0);
+
+					var n1Twn = game.add.tween(message13.scale).to({x: message13Scale, y: message13Scale}, 600, 'Linear', true, 200);
+				});
+			});
+			//hinh trinh
+			game.time.events.add(117600, function() {
+				var message13Twn = game.add.tween(message13.scale).to({x: 0, y: 0}, 500, 'Linear', true);
+				message13Twn.onComplete.add(function() {
+					message13.kill();
+					trinh = game.add.image(game.width/2, game.height/2, 'trinh');
+					trinh.anchor.setTo(0.5);
+					var trinhScale = (scrWidth > scrHeight) ? game.height/(1.15*trinh.width) :
+						game.width/(1.15*trinh.width);
+					trinh.scale.setTo(0);
+
+					var n1Twn = game.add.tween(trinh.scale).to({x: trinhScale, y: trinhScale}, 600, 'Linear', true, 200);
+				});
+			});
+			//chuc trinh
+			game.time.events.add(121800, function() {
+				var trinhTwn = game.add.tween(trinh.scale).to({x: 0, y: 0}, 500, 'Linear', true);
+				trinhTwn.onComplete.add(function() {
+					trinh.kill();
+					message14 = game.add.image(game.width/2, game.height/2, 'message14');
+					message14.anchor.setTo(0.5);
+					var message14Scale = (scrWidth > scrHeight) ? game.height/(1.15*message14.width) :
+						game.width/(1.15*message14.width);
+					message14.scale.setTo(0);
+
+					var n1Twn = game.add.tween(message14.scale).to({x: message14Scale, y: message14Scale}, 600, 'Linear', true, 200);
+				});
+			});
+			game.time.events.add(130200, function() {
+				var message14Twn = game.add.tween(message14.scale).to({x: 0, y: 0}, 500, 'Linear', true);
+				message14Twn.onComplete.add(function() {
+					message14.kill();
+					message16 = game.add.image(game.width/2, game.height/2, 'message16');
+					message16.anchor.setTo(0.5);
+					var message16Scale = (scrWidth > scrHeight) ? game.height/(1.15*message16.width) :
+						game.width/(1.15*message16.width);
+					message16.scale.setTo(0);
+
+					var n1Twn = game.add.tween(message16.scale).to({x: message16Scale, y: message16Scale}, 600, 'Linear', true, 200);
+				});
+			});
+			game.time.events.add(134400, function() {
+				var message16Twn = game.add.tween(message16.scale).to({x: 0, y: 0}, 500, 'Linear', true);
+				message16Twn.onComplete.add(function() {
+					message16.kill();
+					message17 = game.add.image(game.width/2, game.height/2, 'message17');
+					message17.anchor.setTo(0.5);
+					var message17Scale = (scrWidth > scrHeight) ? game.height/(1.15*message17.width) :
+						game.width/(1.15*message17.width);
+					message17.scale.setTo(0);
+
+					var n1Twn = game.add.tween(message17.scale).to({x: message17Scale, y: message17Scale}, 600, 'Linear', true, 200);
+				});
+			});
+
+			game.time.events.add(134400 + 4200, function() {
+				var message17Twn = game.add.tween(message17.scale).to({x: 0, y: 0}, 500, 'Linear', true);
+				message17Twn.onComplete.add(function() {
+					message17.kill();
+					message18 = game.add.image(game.width/2, game.height/2, 'message18');
+					message18.anchor.setTo(0.5);
+					var message18Scale = (scrWidth > scrHeight) ? game.height/(1.15*message18.width) :
+						game.width/(1.15*message18.width);
+					message18.scale.setTo(0);
+
+					var n1Twn = game.add.tween(message18.scale).to({x: message18Scale, y: message18Scale}, 600, 'Linear', true, 200);
+				});
+			});
+		}
+
+		function update() {
+			if(message) {
+				game.world.bringToTop(message);
+			}
+			if(roses) {
+				game.world.bringToTop(roses);
+			}
+			if(nhi1){
+				game.world.bringToTop(nhi1);
+			}
+			if(message1){
+				game.world.bringToTop(message1);
+			}
+			if(thu){
+				game.world.bringToTop(thu);
+			}
+			if(message2){
+				game.world.bringToTop(message2);
+			}
+			if(mi){
+				game.world.bringToTop(mi);
+			}
+			if(ngan){
+				game.world.bringToTop(ngan);
+			}
+			if(message3){
+				game.world.bringToTop(message3);
+			}
+			if(giang){
+				game.world.bringToTop(giang);
+			}
+			if(message4){
+				game.world.bringToTop(message4);
+			}
+			if(trang){
+				game.world.bringToTop(trang);
+			}
+			if(message5){
+				game.world.bringToTop(message5);
+			}
+			if(tram){
+				game.world.bringToTop(tram);
+			}
+			if(message6){
+				game.world.bringToTop(message6);
+			}
+			if(quy){
+				game.world.bringToTop(quy);
+			}
+			if(message7){
+				game.world.bringToTop(message7);
+			}
+			if(duong){
+				game.world.bringToTop(duong);
+			}
+			if(message8){
+				game.world.bringToTop(message8);
+			}
+			if(phuong){
+				game.world.bringToTop(phuong);
+			}
+			if(message9){
+				game.world.bringToTop(message9);
+			}
+			if(phuong1){
+				game.world.bringToTop(phuong1);
+			}
+			if(message10){
+				game.world.bringToTop(message10);
+			}
+			if(thao){
+				game.world.bringToTop(thao);
+			}
+			if(message11){
+				game.world.bringToTop(message11);
+			}
+			if(ha){
+				game.world.bringToTop(ha);
+			}
+			if(message12){
+				game.world.bringToTop(message12);
+			}
+			if(trinh){
+				game.world.bringToTop(trinh);
+			}
+			if(message13){
+				game.world.bringToTop(message13);
+			}
+			if(message14){
+				game.world.bringToTop(message14);
+			}
+			if(message15){
+				game.world.bringToTop(message15);
+			}
+			if(message16){
+				game.world.bringToTop(message16)
+			}
+			if(message17){
+				game.world.bringToTop(message17)
+			}
+			if(message18){
+				game.world.bringToTop(message18)
+			}
+		}
+	</script>
+</body>
+</html>
